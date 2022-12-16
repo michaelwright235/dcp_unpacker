@@ -12,7 +12,7 @@ encoding = 'ascii'
 
 parser = argparse.ArgumentParser(
                         prog = 'dcp_unpacker.py',
-                        description = 'Unpack DCP files of WinterMute Engine')
+                        description = 'Unpack DCP files of Wintermute Engine games')
 parser.add_argument('filename', help='Path to a file', type=str)
 parser.add_argument('-e', help='Use custom encoding for intertal paths (default one is ascii)', type=str)
 args = parser.parse_args()
