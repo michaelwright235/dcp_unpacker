@@ -55,11 +55,11 @@ for i in range(0, num):
     for x in range(0, length):
         internal_path[x] = internal_path[x]^0x44; # DirTree decrypted
     internal_path = delete_last_x00(internal_path).decode(encoding)
-    internal_path = internal_path.replace('/', os.sep).replace('\\', os.sep) # normilizing path for all OSs
+    internal_path = internal_path.replace('/', os.sep).replace('\\', os.sep) # normalizing path for all OSs
     joined_path = os.path.join(export_dir, internal_path)
     (dirs, name) = os.path.split(joined_path)
     os.makedirs(dirs, exist_ok=True)
-    ext_file = open(dirs + "/" +name, "wb")
+    ext_file = open(dirs + os.sep + name, "wb")
     print(f"Extracting '{internal_path}' [{i+1} of {num}]")
 
     pointer = int.from_bytes(dcp_file.read(4), byteorder='little', signed=False)
